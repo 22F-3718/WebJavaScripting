@@ -4,32 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>People's Data</title>
+    <title>To-Do List</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
-        <h1>People's Data</h1>
+        <h1>To-Do List</h1>
 
         <div class="section">
-            <h2>Display People Data</h2>
-            <button id="showDataButton" class="btn">Show Data</button>
-            <table id="peopleDataTable" class="table" style="display: none;">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th>CGPA</th>
-                        <th>Marital Status</th>
-                        <th>Country</th>
-                        <th>Favorite Color</th>
-                        <th>Hobbies</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+            <button id="addTodoButton" class="btn">+</button>
+            <div id="todoInputContainer" style="display: none;">
+                <textarea id="todoInput" placeholder="Describe your to-do work..." required=""></textarea>
+                <button id="saveTodoButton" class="btn">Save</button>
+            </div>
+            <ul id="todoList"></ul>
         </div>
     </div>
 

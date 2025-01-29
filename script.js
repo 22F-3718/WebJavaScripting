@@ -1,59 +1,30 @@
-const peopleData = [
-    {
-        Name: "Hasnain",
-        Age: 21,
-        CGPA: 3.14,
-        Marital_Status: "Single",
-        Country: "Pakistan",
-        Favorite_Color: "Blue",
-        Hobbies: "Reading, Coding, Gaming"
-    },
-    {
-        Name: "Sarah",
-        Age: 24,
-        CGPA: 3.8,
-        Marital_Status: "Married",
-        Country: "United States",
-        Favorite_Color: "Red",
-        Hobbies: "Painting, Hiking"
-    },
-    {
-        Name: "John",
-        Age: 30,
-        CGPA: 3.5,
-        Marital_Status: "Single",
-        Country: "United Kingdom",
-        Favorite_Color: "Green",
-        Hobbies: "Photography, Traveling"
-    },
-    {
-        Name: "Maria",
-        Age: 27,
-        CGPA: 3.9,
-        Marital_Status: "Married",
-        Country: "Canada",
-        Favorite_Color: "Purple",
-        Hobbies: "Cooking, Yoga"
-    }
-];
 
-function displayPeopleData() {
-    const tableBody = document.getElementById("peopleDataTable").querySelector("tbody");
-    tableBody.innerHTML = "";
+document.getElementById("addTodoButton").addEventListener("click", () => {
+    document.getElementById("todoInputContainer").style.display = "block";
+});
 
-    peopleData.forEach(person => {
-        const row = document.createElement("tr");
+document.getElementById("saveTodoButton").addEventListener("click", () => {
+    const todoInput = document.getElementById("todoInput");
+    const todoText = todoInput.value.trim();
 
-        Object.values(person).forEach(value => {
-            const cell = document.createElement("td");
-            cell.textContent = value;
-            row.appendChild(cell);
+    if (todoText) {
+        const todoList = document.getElementById("todoList");
+        const li = document.createElement("li");
+
+        li.textContent = todoText;
+
+        const deleteIcon = document.createElement("img");
+        deleteIcon.src = "delete.png";
+        deleteIcon.alt = "Delete";
+        deleteIcon.style = "width: 35px; height: 35px";
+        deleteIcon.addEventListener("click", () => {
+            todoList.removeChild(li);
         });
 
-        tableBody.appendChild(row);
-    });
+        li.appendChild(deleteIcon);
+        todoList.appendChild(li);
 
-    document.getElementById("peopleDataTable").style.display = "table";
-}
-
-document.getElementById("showDataButton").addEventListener("click", displayPeopleData);
+        todoInput.value = "";
+        document.getElementById("todoInputContainer").style.display = "none";
+    }
+});
