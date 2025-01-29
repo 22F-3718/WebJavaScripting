@@ -4,20 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Country List</title>
+    <title>People's Data</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Country List</h1>
-    <hr>
-    <div class="main">
-        <button id="showListButton">Show Country List</button>
-        <ul id="countryList"></ul>
-    </div>
+    <div class="container">
+        <h1>People's Data</h1>
 
-    <ul id="listOfData">
-    </ul>
-    <button id="submitButton">Submit</button>
+        <div class="section">
+            <h2>Display People Data</h2>
+            <button id="showDataButton" class="btn">Show Data</button>
+            <table id="peopleDataTable" class="table" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>CGPA</th>
+                        <th>Marital Status</th>
+                        <th>Country</th>
+                        <th>Favorite Color</th>
+                        <th>Hobbies</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
